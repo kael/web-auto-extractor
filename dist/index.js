@@ -18,6 +18,7 @@ exports.default = function () {
 
     return {
       metatags: (0, _metatagParser2.default)($html),
+      linktags: (0, _linktagParser2.default)($html),
       microdata: (0, _microRdfaParser2.default)(html, 'micro'),
       rdfa: (0, _microRdfaParser2.default)(html, 'rdfa'),
       jsonld: (0, _jsonldParser2.default)($html)
@@ -37,6 +38,10 @@ var _cheerio2 = _interopRequireDefault(_cheerio);
 var _metatagParser = require('./parsers/metatag-parser');
 
 var _metatagParser2 = _interopRequireDefault(_metatagParser);
+
+var _linktagParser = require('./parsers/linktag-parser');
+
+var _linktagParser2 = _interopRequireDefault(_linktagParser);
 
 var _microRdfaParser = require('./parsers/micro-rdfa-parser');
 

@@ -1,5 +1,6 @@
 import $ from 'cheerio'
 import MetaTagsParser from './parsers/metatag-parser'
+import LinkTagsParser from './parsers/linktag-parser'
 import MicroRdfaParser from './parsers/micro-rdfa-parser'
 import JsonldParser from './parsers/jsonld-parser'
 if (!global._babelPolyfill) {
@@ -20,6 +21,7 @@ export default function () {
 
     return {
       metatags: MetaTagsParser($html),
+      linktags: LinkTagsParser($html),
       microdata: MicroRdfaParser(html, 'micro'),
       rdfa: MicroRdfaParser(html, 'rdfa'),
       jsonld: JsonldParser($html)
